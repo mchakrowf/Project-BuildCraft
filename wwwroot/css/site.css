@@ -1,0 +1,196 @@
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #24292f;
+  --bg-color-dark:  #0d1117;
+  --text-color-dark: #c9d1d9;
+  --surface-dark:    #161b22;
+  --border-dark:     #30363d;
+  --input-bg-dark:   #161b22;
+  --input-border:    #30363d;
+  --primary-dark:    #238636;
+}
+
+html.light {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+html.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* make both html and body inherit theme */
+html, body {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* ensure body inherits html theme */
+html.dark body {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* ===== Class: 1×3 grid of 120px squares ===== */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: 120px;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-option {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color .2s;
+}
+
+
+
+.class-option .caption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ===== Subclass: 2×3 grid of 160px squares ===== */
+.subclass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(2, 160px);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.subclass-option {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subclass-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color .2s;
+}
+
+.subclass-option input:checked + img {
+  border-color: var(--primary-dark);
+}
+
+.subclass-option .caption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ===== Dark Mode Overrides ===== */
+html.dark .navbar {
+  background-color: var(--surface-dark) !important;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+html.dark .navbar-brand,
+html.dark .navbar .nav-link {
+  color: var(--text-color-dark) !important;
+}
+
+html.dark .navbar .nav-link:hover {
+  color: var(--text-color-light) !important;
+}
+
+html.dark .container {
+  background-color: transparent;
+}
+
+html.dark .form-control,
+html.dark .form-select {
+  background-color: var(--input-bg-dark) !important;
+  color: var(--text-color-dark) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+html.dark .form-select option {
+  background-color: var(--input-bg-dark) !important;
+  color: var(--text-color-dark) !important;
+}
+
+html.dark .btn-primary {
+  background-color: var(--primary-dark) !important;
+  border-color: #2ea043 !important;
+}
+
+html.dark .btn-primary:hover {
+  background-color: #2ea043 !important;
+}
+
+html.dark .form-check-input {
+  background-color: var(--surface-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Invert class images in dark mode (excluding border) */
+html.dark .class-option img {
+  filter: invert(1) brightness(1.2);
+}
+
+/* Style the selected class image with green border only */
+.class-option img {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color .2s;
+}
+.class-option input:checked + img {
+  border-color: var(--primary-dark) !important;
+}
+
+/* Remove any focus outline and box-shadow */
+.class-option input,
+.class-option img {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.class-option input:focus + img,
+.class-option img:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus ring on class-option container */
+.class-option:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Additional focus overrides for radio input and images */
+.class-option input[type="radio"]:focus,
+.class-option input[type="radio"]:focus-visible,
+.class-option input[type="radio"]::-webkit-focus-ring-color,
+.class-option img:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

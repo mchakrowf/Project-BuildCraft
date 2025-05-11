@@ -1,0 +1,150 @@
+@model ProjectBuildCraft.ViewModels.BuildViewModel
+
+<h1>Generate Your Destiny Build</h1>
+
+<form asp-action="Index" method="post">
+  <!-- CLASS grid -->
+  <div class="class-grid">
+    @foreach (var cls in Model.Classes)
+    {
+      <label class="class-option">
+        <input asp-for="SelectedClassId" type="radio" hidden value="@cls.Id" />
+        <img src="@cls.ImageUrl" alt="@cls.Name" title="@cls.Name" />
+        <div class="caption">@cls.Name</div>
+      </label>
+    }
+  </div>
+
+  <!-- SUBCLASS image-grid & ARMOR dropdown -->
+  <div id="subclassArmorPanel" style="display:none; margin-top:1rem;">
+    <h3>Pick Your Subclass</h3>
+    <div class="subclass-grid" id="subclassGrid"></div>
+
+    <div class="form-group mt-3">
+      <label asp-for="SelectedArmorId">Exotic Armor</label>
+      <select id="armorSelect"
+              asp-for="SelectedArmorId"
+              class="form-control"
+              disabled>
+        <option value="">-- pick armor --</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- WEAPON, STATS, FOCUS as normal dropdowns -->
+  <div class="form-group mt-3">
+    <label asp-for="SelectedWeaponId">Exotic Weapon</label>
+    <select asp-for="SelectedWeaponId"
+            asp-items="Model.Weapons"
+            class="form-control">
+      <option value="">-- select weapon --</option>
+    </select>
+  </div>
+
+  <div class="form-group mt-3">
+    <label asp-for="PrimaryStatId">Primary Stat</label>
+    <select asp-for="PrimaryStatId"
+            asp-items="Model.Stats"
+            class="form-control">
+      <option value="">-- choose one --</option>
+    </select>
+  </div>
+
+  <div class="form-group mt-3">
+    <label asp-for="SecondaryStatId">Secondary Stat</label>
+    <select asp-for="SecondaryStatId"
+            asp-items="Model.Stats"
+            class="form-control">
+      <option value="">-- choose one --</option>
+    </select>
+  </div>
+
+  <div class="form-group mt-3">
+    <label asp-for="SelectedFocusId">Focus</label>
+    <select asp-for="SelectedFocusId"
+            asp-items="Model.FocusOptions"
+            class="form-control">
+      <option value="">-- select focus --</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-4">Generate Build</button>
+</form>
+
+@if (Model.Recommendation != null)
+{
+  <hr />
+  <h2>Your Recommended Build</h2>
+  @if (!string.IsNullOrEmpty(Model.Recommendation.Summary))
+  {
+    <p>@Model.Recommendation.Summary</p>
+  }
+  <h4>Mods & Details</h4>
+  <p>@Model.Recommendation.Mods</p>
+}
+
+@section Scripts {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const classInputs    = document.querySelectorAll('input[name="SelectedClassId"]');
+      const panel          = document.getElementById('subclassArmorPanel');
+      const subclassGrid   = document.getElementById('subclassGrid');
+      const armorSelect    = document.getElementById('armorSelect');
+
+      let preSubId = '@(Model.SelectedSubclassId?.ToString() ?? "")';
+      let preArmId = '@(Model.SelectedArmorId?.ToString() ?? "")';
+
+      async function loadDependents() {
+        const sel = document.querySelector('input[name="SelectedClassId"]:checked');
+        const classId = sel ? sel.value : "";
+        if (!classId) {
+          panel.style.display   = 'none';
+          subclassGrid.innerHTML= '';
+          armorSelect.disabled  = true;
+          return;
+        }
+
+        panel.style.display   = 'block';
+        armorSelect.disabled  = false;
+
+        // --- Fetch & render subclasses ---
+        const subs = await (await fetch(`/Build/GetSubclasses?classId=${classId}`)).json();
+        subclassGrid.innerHTML = '';
+        subs.forEach(s => {
+          subclassGrid.innerHTML += `
+<label class="subclass-option">
+  <input type="radio"
+         name="SelectedSubclassId"
+         value="${s.id}" hidden />
+  <img src="${s.imageUrl}"
+       alt="${s.name}"
+       title="${s.name}" />
+  <div class="caption">${s.name}</div>
+</label>`;
+        });
+        if (preSubId) {
+          const preInput = subclassGrid.querySelector(`input[value="${preSubId}"]`);
+          if (preInput) preInput.checked = true;
+        }
+
+        // --- Fetch & populate armors dropdown ---
+        const arms = await (await fetch(`/Build/GetArmors?classId=${classId}`)).json();
+        armorSelect.innerHTML = `<option value="">-- pick armor --</option>`;
+        arms.forEach(a => {
+          armorSelect.innerHTML += `<option value="${a.id}">${a.name}</option>`;
+        });
+        if (preArmId) armorSelect.value = preArmId;
+      }
+
+      classInputs.forEach(i =>
+        i.addEventListener('change', () => {
+          preSubId = ""; preArmId = "";
+          loadDependents();
+        })
+      );
+
+      // initial load (handles post-back too)
+      loadDependents();
+    });
+  </script>
+}

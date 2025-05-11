@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Inline theme script: add only html class -->
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.className = theme;
+    })();
+  </script>
+  <title>@ViewData["Title"] - ProjectBuildCraft</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand" asp-page="/Index">ProjectBuildCraft</a>
+      <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item"><a class="nav-link" asp-page="/Index">Home</a></li>
+        <li class="nav-item"><a class="nav-link" asp-page="/Privacy">Privacy</a></li>
+        <li class="nav-item"><a class="nav-link" asp-page="/About">About</a></li>
+        <li class="nav-item"><a class="nav-link" asp-controller="Build" asp-action="Index">Build</a></li>
+      </ul>
+      <div class="form-check form-switch ms-3">
+        <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+        <label class="form-check-label" for="darkModeToggle" title="Toggle dark mode">
+          <span id="darkModeIcon"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-4">
+    @RenderBody()
+  </div>
+  <script src="~/js/site.js"></script>
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  @RenderSection("Scripts", required: false)
+</body>
+</html>

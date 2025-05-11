@@ -1,0 +1,369 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/armors/Sunbracers.jpg",
+      "PackagePath": "staticwebassets/images/armors/Sunbracers.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/classes/Hunter.png",
+      "PackagePath": "staticwebassets/images/classes/Hunter.png"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/classes/Titan.png",
+      "PackagePath": "staticwebassets/images/classes/Titan.png"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/classes/Warlock.png",
+      "PackagePath": "staticwebassets/images/classes/Warlock.png"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Arcstrider.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Arcstrider.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Behemoth.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Behemoth.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Berserker.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Berserker.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Broodweaver.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Broodweaver.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Dawnblade.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Dawnblade.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Gunslinger.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Gunslinger.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Nightstalker.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Nightstalker.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/PrismaticHunter.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/PrismaticHunter.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/PrismaticTitan.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/PrismaticTitan.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/PrismaticWarlock.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/PrismaticWarlock.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Revenant.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Revenant.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Sentinel.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Sentinel.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Shadebinder.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Shadebinder.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Stormcaller.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Stormcaller.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Striker.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Striker.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Sunbreaker.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Sunbreaker.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Threadrunner.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Threadrunner.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/subclasses/Voidwalker.jpg",
+      "PackagePath": "staticwebassets/images/subclasses/Voidwalker.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/images/weapons/DragonsBreath.jpg",
+      "PackagePath": "staticwebassets/images/weapons/DragonsBreath.jpg"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.slim.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/jquery/dist/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.ProjectBuildCraft.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.ProjectBuildCraft.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.ProjectBuildCraft.props",
+      "PackagePath": "build\\ProjectBuildCraft.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ProjectBuildCraft.props",
+      "PackagePath": "buildMultiTargeting\\ProjectBuildCraft.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ProjectBuildCraft.props",
+      "PackagePath": "buildTransitive\\ProjectBuildCraft.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
