@@ -1,0 +1,9 @@
+# .NET build output
+/bin/
+/obj/
+
+# VS Code workspace
+.vscode/
+
+# Mac files
+.DS_Store
