@@ -191,6 +191,7 @@ namespace ProjectBuildCraft.Services
             var subclassName = _db.Subclasses.Find(subclassId)!.Name;
             string subclassElement = subclassName switch
             {
+                /*----------Warlock----------*/
                 "Dawnblade"        => "Solar",
                 "Voidwalker"       => "Void",
                 "Stormcaller"      => "Arc",
@@ -198,6 +199,7 @@ namespace ProjectBuildCraft.Services
                 "Broodweaver"      => "Strand",
                 "Prismatic Warlock"=> exoticElement,
 
+                /*-----------Hunter-----------*/
                 "Gunslinger"       => "Solar",
                 "Nightstalker"     => "Void",
                 "Arcstrider"       => "Arc",
@@ -205,6 +207,7 @@ namespace ProjectBuildCraft.Services
                 "Threadrunner"     => "Strand",
                 "Prismatic Hunter" => exoticElement,
 
+                /*-----------Titan-----------*/
                 "Sunbreaker"       => "Solar",
                 "Sentinel"         => "Void",
                 "Striker"          => "Arc",
@@ -267,18 +270,21 @@ namespace ProjectBuildCraft.Services
                 ? "Prismatic"
                 : subclass.Name switch
             {
+                /*-------Warlock-------*/
                 "Dawnblade"   => "Solar",
                 "Voidwalker"  => "Void",
                 "Stormcaller" => "Arc",
                 "Shadebinder" => "Stasis",
                 "Broodweaver" => "Strand",
 
+                /*--------Hunter--------*/
                 "Gunslinger"  => "Solar",
                 "Nightstalker"=> "Void",
                 "Arcstrider"  => "Arc",
                 "Revenant"    => "Stasis",
                 "Threadrunner"=> "Strand",
 
+                /*---------Titan---------*/
                 "Sunbreaker"  => "Solar",
                 "Sentinel"    => "Void",
                 "Striker"     => "Arc",
@@ -461,10 +467,15 @@ namespace ProjectBuildCraft.Services
             Console.WriteLine($"[DEBUG] Step 3 (Fallback) → {step3.Count}: {string.Join(", ", step3.Select(m => m.Name))}");
             chosen.AddRange(step3.Take(2 - chosen.Count));
 
-            // Step 4) Neutral
+            // Step 4) PrimaryFocus=="Neutral" OR FallbackFocus=="Neutral"
             var step4 = allCandidates
-                .Where(m => m.PrimaryFocus.Equals("Neutral", StringComparison.OrdinalIgnoreCase)
-                        && !chosen.Any(c => c.Hash == m.Hash))
+                .Where(m =>
+                    (m.PrimaryFocus.Equals("Neutral", StringComparison.OrdinalIgnoreCase)
+                || (!string.IsNullOrWhiteSpace(m.FallbackFocus)
+                    && m.FallbackFocus
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Any(ff => ff.Trim().Equals("Neutral", StringComparison.OrdinalIgnoreCase))))
+                && !chosen.Any(c => c.Hash == m.Hash))
                 .ToList();
             Console.WriteLine($"[DEBUG] Step 4 (Neutral) → {step4.Count}: {string.Join(", ", step4.Select(m => m.Name))}");
             chosen.AddRange(step4.Take(2 - chosen.Count));
@@ -513,10 +524,6 @@ namespace ProjectBuildCraft.Services
 
             return results;
         }
-
-
-
-
 
     }
 }
