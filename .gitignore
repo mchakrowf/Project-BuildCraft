@@ -10,3 +10,4 @@
 
 # local environment variables
 .env
+exotics.json

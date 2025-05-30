@@ -193,7 +193,6 @@
 /Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/plugs.json
 /Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz
 /Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/SandboxPerkDefinition.json
-/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/DestinyInventoryItemDefinition.json
 /Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/fragments-metadata.json
 /Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/fragments-raw-metadata.json
 /Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/aspects-raw-metadata.json

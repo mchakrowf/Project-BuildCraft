@@ -246,111 +246,110 @@ namespace ProjectBuildCraft.Services
             };
         }
 
-// Services/BuildGeneratorService.cs
 
-private List<FragmentMetadata> SelectFragments(
-    int focusOptionId,
-    int chargeTypeId,    // 1=Grenade, 2=Melee, 3=ClassAbility, 4=Super
-    int subclassId,
-    int slotCount)
-{
-    // DEBUG: entry parameters
-    Console.WriteLine($"[DEBUG] SelectFragments(focusOptionId={focusOptionId}, chargeTypeId={chargeTypeId}, subclassId={subclassId}, slotCount={slotCount})");
+        private List<FragmentMetadata> SelectFragments(
+            int focusOptionId,
+            int chargeTypeId,    // 1=Grenade, 2=Melee, 3=ClassAbility, 4=Super
+            int subclassId,
+            int slotCount)
+        {
+            // DEBUG: entry parameters
+            Console.WriteLine($"[DEBUG] SelectFragments(focusOptionId={focusOptionId}, chargeTypeId={chargeTypeId}, subclassId={subclassId}, slotCount={slotCount})");
 
-    // 1) Determine subclass element (Prismatic subclasses → "Prismatic")
-    var subclass = _db.Subclasses.Find(subclassId)
-                   ?? throw new InvalidOperationException($"Subclass {subclassId} not found");
-    bool isPrismatic = subclass.Name.StartsWith("Prismatic", StringComparison.OrdinalIgnoreCase);
-    var fragmentElement = isPrismatic
-        ? "Prismatic"
-        : subclass.Name switch
-    {
-        "Dawnblade"   => "Solar",
-        "Voidwalker"  => "Void",
-        "Stormcaller" => "Arc",
-        "Shadebinder" => "Stasis",
-        "Broodweaver" => "Strand",
-        "Gunslinger"  => "Solar",
-        "Nightstalker"=> "Void",
-        "Arcstrider"  => "Arc",
-        "Revenant"    => "Stasis",
-        "Threadrunner"=> "Strand",
-        "Sunbreaker"  => "Solar",
-        "Sentinel"    => "Void",
-        "Striker"     => "Arc",
-        "Behemoth"    => "Stasis",
-        "Berserker"   => "Strand",
-        _             => throw new InvalidOperationException($"Unknown subclass {subclass.Name}")
-    };
-    Console.WriteLine($"[DEBUG] fragmentElement = \"{fragmentElement}\" (isPrismatic={isPrismatic})");
+            // 1) Determine subclass element (Prismatic subclasses → "Prismatic")
+            var subclass = _db.Subclasses.Find(subclassId)
+                        ?? throw new InvalidOperationException($"Subclass {subclassId} not found");
+            bool isPrismatic = subclass.Name.StartsWith("Prismatic", StringComparison.OrdinalIgnoreCase);
+            var fragmentElement = isPrismatic
+                ? "Prismatic"
+                : subclass.Name switch
+            {
+                "Dawnblade"   => "Solar",
+                "Voidwalker"  => "Void",
+                "Stormcaller" => "Arc",
+                "Shadebinder" => "Stasis",
+                "Broodweaver" => "Strand",
+                "Gunslinger"  => "Solar",
+                "Nightstalker"=> "Void",
+                "Arcstrider"  => "Arc",
+                "Revenant"    => "Stasis",
+                "Threadrunner"=> "Strand",
+                "Sunbreaker"  => "Solar",
+                "Sentinel"    => "Void",
+                "Striker"     => "Arc",
+                "Behemoth"    => "Stasis",
+                "Berserker"   => "Strand",
+                _             => throw new InvalidOperationException($"Unknown subclass {subclass.Name}")
+            };
+            Console.WriteLine($"[DEBUG] fragmentElement = \"{fragmentElement}\" (isPrismatic={isPrismatic})");
 
-    // 2) Map chargeTypeId → EnergyReturnFocus strings
-    var energyFocusName = chargeTypeId switch
-    {
-        1 => "Grenade",
-        2 => "Melee",
-        3 => "ClassAbility",
-        4 => "Super",
-        _ => throw new InvalidOperationException($"Unexpected chargeTypeId {chargeTypeId}; must be 1–4")
-    };
-    Console.WriteLine($"[DEBUG] chargeTypeId = {chargeTypeId} → energyFocusName = \"{energyFocusName}\"");
+            // 2) Map chargeTypeId → EnergyReturnFocus strings
+            var energyFocusName = chargeTypeId switch
+            {
+                1 => "Grenade",
+                2 => "Melee",
+                3 => "ClassAbility",
+                4 => "Super",
+                _ => throw new InvalidOperationException($"Unexpected chargeTypeId {chargeTypeId}; must be 1–4")
+            };
+            Console.WriteLine($"[DEBUG] chargeTypeId = {chargeTypeId} → energyFocusName = \"{energyFocusName}\"");
 
-    // 3) Gather all fragments matching the subclass element
-    var all = _fragmentMetadata.Values
-        .Where(f => string.Equals(f.Element, fragmentElement, StringComparison.OrdinalIgnoreCase))
-        .ToList();
-    Console.WriteLine($"[DEBUG] All {all.Count} fragments for element \"{fragmentElement}\": {string.Join(", ", all.Select(f => f.Name))}");
+            // 3) Gather all fragments matching the subclass element
+            var all = _fragmentMetadata.Values
+                .Where(f => string.Equals(f.Element, fragmentElement, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+            Console.WriteLine($"[DEBUG] All {all.Count} fragments for element \"{fragmentElement}\": {string.Join(", ", all.Select(f => f.Name))}");
 
-    var result = new List<FragmentMetadata>();
+            var result = new List<FragmentMetadata>();
 
-    // Step 1) primary focus
-    var step1 = all
-        .Where(f => string.Equals(f.EnergyReturnFocus, energyFocusName, StringComparison.OrdinalIgnoreCase))
-        .Take(slotCount)
-        .ToList();
-    Console.WriteLine($"[DEBUG] Step 1 (EnergyReturnFocus==\"{energyFocusName}\") → {step1.Count}: {string.Join(", ", step1.Select(f => f.Name))}");
-    result.AddRange(step1);
+            // Step 1) primary focus
+            var step1 = all
+                .Where(f => string.Equals(f.EnergyReturnFocus, energyFocusName, StringComparison.OrdinalIgnoreCase))
+                .Take(slotCount)
+                .ToList();
+            Console.WriteLine($"[DEBUG] Step 1 (EnergyReturnFocus==\"{energyFocusName}\") → {step1.Count}: {string.Join(", ", step1.Select(f => f.Name))}");
+            result.AddRange(step1);
 
-    // Step 2) universal versatile
-    if (result.Count < slotCount)
-    {
-        var need = slotCount - result.Count;
-        var step2 = all
-            .Where(f => f.UniversalVersatile == true && !result.Contains(f))
-            .Take(need)
-            .ToList();
-        Console.WriteLine($"[DEBUG] Step 2 (UniversalVersatile) → {step2.Count}: {string.Join(", ", step2.Select(f => f.Name))}");
-        result.AddRange(step2);
-    }
+            // Step 2) universal versatile
+            if (result.Count < slotCount)
+            {
+                var need = slotCount - result.Count;
+                var step2 = all
+                    .Where(f => f.UniversalVersatile == true && !result.Contains(f))
+                    .Take(need)
+                    .ToList();
+                Console.WriteLine($"[DEBUG] Step 2 (UniversalVersatile) → {step2.Count}: {string.Join(", ", step2.Select(f => f.Name))}");
+                result.AddRange(step2);
+            }
 
-    // Step 3) neutral fallback
-    if (result.Count < slotCount)
-    {
-        var need = slotCount - result.Count;
-        var step3 = all
-            .Where(f => string.Equals(f.EnergyReturnFocus, "Neutral", StringComparison.OrdinalIgnoreCase)
-                     && !result.Contains(f))
-            .Take(need)
-            .ToList();
-        Console.WriteLine($"[DEBUG] Step 3 (Neutral) → {step3.Count}: {string.Join(", ", step3.Select(f => f.Name))}");
-        result.AddRange(step3);
-    }
+            // Step 3) neutral fallback
+            if (result.Count < slotCount)
+            {
+                var need = slotCount - result.Count;
+                var step3 = all
+                    .Where(f => string.Equals(f.EnergyReturnFocus, "Neutral", StringComparison.OrdinalIgnoreCase)
+                            && !result.Contains(f))
+                    .Take(need)
+                    .ToList();
+                Console.WriteLine($"[DEBUG] Step 3 (Neutral) → {step3.Count}: {string.Join(", ", step3.Select(f => f.Name))}");
+                result.AddRange(step3);
+            }
 
-    // Step 4) fill any remaining
-    if (result.Count < slotCount)
-    {
-        var need = slotCount - result.Count;
-        var step4 = all
-            .Where(f => !result.Contains(f))
-            .Take(need)
-            .ToList();
-        Console.WriteLine($"[DEBUG] Step 4 (FillRemaining) → {step4.Count}: {string.Join(", ", step4.Select(f => f.Name))}");
-        result.AddRange(step4);
-    }
+            // Step 4) fill any remaining
+            if (result.Count < slotCount)
+            {
+                var need = slotCount - result.Count;
+                var step4 = all
+                    .Where(f => !result.Contains(f))
+                    .Take(need)
+                    .ToList();
+                Console.WriteLine($"[DEBUG] Step 4 (FillRemaining) → {step4.Count}: {string.Join(", ", step4.Select(f => f.Name))}");
+                result.AddRange(step4);
+            }
 
-    Console.WriteLine($"[DEBUG] Final fragments chosen ({result.Count}): {string.Join(", ", result.Select(f => f.Name))}");
-    return result;
-}
+            Console.WriteLine($"[DEBUG] Final fragments chosen ({result.Count}): {string.Join(", ", result.Select(f => f.Name))}");
+            return result;
+        }
 
 
 
