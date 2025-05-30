@@ -1,4 +1,5 @@
 @model ProjectBuildCraft.ViewModels.BuildViewModel
+@using ProjectBuildCraft.Models
 
 <h1>Generate Your Destiny Build</h1>
 
@@ -31,36 +32,22 @@
     </div>
   </div>
 
-  <!-- WEAPON, STATS, FOCUS as normal dropdowns -->
-  <div class="form-group mt-3">
-    <label asp-for="SelectedWeaponId">Exotic Weapon</label>
-    <select asp-for="SelectedWeaponId"
-            asp-items="Model.Weapons"
-            class="form-control">
-      <option value="">-- select weapon --</option>
-    </select>
-  </div>
+  <!-- WEAPON dropdown -->
+<div class="form-group mt-3">
+  <label asp-for="SelectedWeaponHash">Exotic Weapon</label>
+  <select asp-for="SelectedWeaponHash"
+          asp-items="Model.Weapons"
+          class="form-control">
+    <option value="">-- select weapon --</option>
+  </select>
+  <span asp-validation-for="SelectedWeaponHash" class="text-danger"></span>
+</div>
 
-  <div class="form-group mt-3">
-    <label asp-for="PrimaryStatId">Primary Stat</label>
-    <select asp-for="PrimaryStatId"
-            asp-items="Model.Stats"
-            class="form-control">
-      <option value="">-- choose one --</option>
-    </select>
-  </div>
 
-  <div class="form-group mt-3">
-    <label asp-for="SecondaryStatId">Secondary Stat</label>
-    <select asp-for="SecondaryStatId"
-            asp-items="Model.Stats"
-            class="form-control">
-      <option value="">-- choose one --</option>
-    </select>
-  </div>
 
+  <!-- FOCUS dropdown -->
   <div class="form-group mt-3">
-    <label asp-for="SelectedFocusId">Focus</label>
+    <label asp-for="SelectedFocusId">Build Focus</label>
     <select asp-for="SelectedFocusId"
             asp-items="Model.FocusOptions"
             class="form-control">
@@ -68,67 +55,127 @@
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary mt-4">Generate Build</button>
+  <!-- ABILITY CHARGE dropdown -->
+  <div class="form-group mt-3">
+    <label asp-for="SelectedChargeTypeId">Ability Focus</label>
+    <select asp-for="SelectedChargeTypeId"
+            asp-items="Model.ChargeTypes"
+            class="form-control">
+      <option value="">-- select focus --</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-4">
+    Generate Build!
+  </button>
 </form>
 
-@if (Model.Recommendation != null)
+@if (Model.Recommendation != null && Model.ModLoadout.Any())
 {
-  <hr />
-  <h2>Your Recommended Build</h2>
-  @if (!string.IsNullOrEmpty(Model.Recommendation.Summary))
-  {
-    <p>@Model.Recommendation.Summary</p>
-  }
-  <h4>Mods & Details</h4>
-  <p>@Model.Recommendation.Mods</p>
+    <hr class="my-4" />
+    
+    <h4>Suggested Mod Loadout</h4>
+    <div class="mod-loadout-section">
+        <table class="table">
+      <thead>
+        <tr>
+          <th>Slot</th>
+          <th>Mod</th>
+        </tr>
+      </thead>
+      <tbody>
+        @{
+          // safely pull out each list
+          var aspects = Model.AspectLoadout.TryGetValue("Aspects", out var aList) 
+                            ? aList 
+                            : new List<Aspect>();
+          var fragments = Model.FragmentLoadout.TryGetValue("Fragments", out var fList) 
+                            ? fList 
+                            : new List<Fragment>();
+          var mods = Model.ModLoadout;
+          List<ModDef> helmetMods = mods.ContainsKey("Helmet")   ? mods["Helmet"]   : new();
+          List<ModDef> glovesMods = mods.ContainsKey("Arms")     ? mods["Arms"]     : new();
+          List<ModDef> chestMods  = mods.ContainsKey("Chest")    ? mods["Chest"]    : new();
+          List<ModDef> legsMods   = mods.ContainsKey("Legs")     ? mods["Legs"]     : new();
+          List<ModDef> classMods  = mods.ContainsKey("ClassItem")? mods["ClassItem"]: new();
+        }
+        <tr>
+          <td>Aspects</td>
+          <td>@string.Join(", ", aspects.Select(a => a.Name))</td>
+        </tr>
+        <tr>
+          <td>Fragments</td>
+          <td>@string.Join(", ", fragments.Select(f => f.Name))</td>
+        </tr>
+        <tr>
+          <td>Helmet</td>
+          <td>@string.Join(", ", helmetMods.Select(m => m.Name))</td>
+        </tr>
+        <tr>
+          <td>Gloves</td>
+          <td>@string.Join(", ", glovesMods.Select(m => m.Name))</td>
+        </tr>
+        <tr>
+          <td>Chest</td>
+          <td>@string.Join(", ", chestMods.Select(m => m.Name))</td>
+        </tr>
+        <tr>
+          <td>Legs</td>
+          <td>@string.Join(", ", legsMods.Select(m => m.Name))</td>
+        </tr>
+        <tr>
+          <td>Class Item</td>
+          <td>@string.Join(", ", classMods.Select(m => m.Name))</td>
+        </tr>
+      </tbody>
+    </table>
+      </div>
 }
+
 
 @section Scripts {
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const classInputs    = document.querySelectorAll('input[name="SelectedClassId"]');
-      const panel          = document.getElementById('subclassArmorPanel');
-      const subclassGrid   = document.getElementById('subclassGrid');
-      const armorSelect    = document.getElementById('armorSelect');
-
-      let preSubId = '@(Model.SelectedSubclassId?.ToString() ?? "")';
-      let preArmId = '@(Model.SelectedArmorId?.ToString() ?? "")';
+      const classInputs  = document.querySelectorAll('input[name="SelectedClassId"]');
+      const panel        = document.getElementById('subclassArmorPanel');
+      const subclassGrid = document.getElementById('subclassGrid');
+      const armorSelect  = document.getElementById('armorSelect');
+      let preSubId       = '@(Model.SelectedSubclassId?.ToString() ?? "")';
+      let preArmId       = '@(Model.SelectedArmorId?.ToString() ?? "")';
 
       async function loadDependents() {
-        const sel = document.querySelector('input[name="SelectedClassId"]:checked');
+        const sel     = document.querySelector('input[name="SelectedClassId"]:checked');
         const classId = sel ? sel.value : "";
         if (!classId) {
-          panel.style.display   = 'none';
-          subclassGrid.innerHTML= '';
-          armorSelect.disabled  = true;
+          panel.style.display    = 'none';
+          subclassGrid.innerHTML = '';
+          armorSelect.disabled   = true;
           return;
         }
 
         panel.style.display   = 'block';
         armorSelect.disabled  = false;
 
-        // --- Fetch & render subclasses ---
-        const subs = await (await fetch(`/Build/GetSubclasses?classId=${classId}`)).json();
+        // Fetch & render subclasses
+        const subs = await fetch(`/Build/GetSubclasses?classId=${classId}`)
+                          .then(r => r.json());
         subclassGrid.innerHTML = '';
         subs.forEach(s => {
           subclassGrid.innerHTML += `
-<label class="subclass-option">
-  <input type="radio"
-         name="SelectedSubclassId"
-         value="${s.id}" hidden />
-  <img src="${s.imageUrl}"
-       alt="${s.name}"
-       title="${s.name}" />
-  <div class="caption">${s.name}</div>
-</label>`;
+            <label class="subclass-option">
+              <input type="radio" name="SelectedSubclassId" hidden value="${s.id}" />
+              <img src="${s.imageUrl}" alt="${s.name}" title="${s.name}" />
+              <div class="caption">${s.name}</div>
+            </label>`;
         });
         if (preSubId) {
-          const preInput = subclassGrid.querySelector(`input[value="${preSubId}"]`);
-          if (preInput) preInput.checked = true;
+          const pre = subclassGrid.querySelector(`input[value="${preSubId}"]`);
+          if (pre) pre.checked = true;
         }
 
-        // --- Fetch & populate armors dropdown ---
-        const arms = await (await fetch(`/Build/GetArmors?classId=${classId}`)).json();
+        // Fetch & populate armor dropdown
+        const arms = await fetch(`/Build/GetArmors?classId=${classId}`)
+                          .then(r => r.json());
         armorSelect.innerHTML = `<option value="">-- pick armor --</option>`;
         arms.forEach(a => {
           armorSelect.innerHTML += `<option value="${a.id}">${a.name}</option>`;
@@ -138,12 +185,12 @@
 
       classInputs.forEach(i =>
         i.addEventListener('change', () => {
-          preSubId = ""; preArmId = "";
+          preSubId = preArmId = '';
           loadDependents();
         })
       );
 
-      // initial load (handles post-back too)
+      // initial load (handles post-back)
       loadDependents();
     });
   </script>

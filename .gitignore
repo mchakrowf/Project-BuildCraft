@@ -7,3 +7,6 @@
 
 # Mac files
 .DS_Store
+
+# local environment variables
+.env

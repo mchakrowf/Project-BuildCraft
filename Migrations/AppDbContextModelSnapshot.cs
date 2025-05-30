@@ -16,6 +16,38 @@ namespace ProjectBuildCraft.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.15");
 
+            modelBuilder.Entity("ProjectBuildCraft.Models.Archetype", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Archetype");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ArchetypeModTemplate", b =>
+                {
+                    b.Property<int>("ArchetypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Slot")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ArchetypeId", "Slot");
+
+                    b.ToTable("ArchetypeModTemplates");
+                });
+
             modelBuilder.Entity("ProjectBuildCraft.Models.BuildMapping", b =>
                 {
                     b.Property<int>("Id")
@@ -23,6 +55,9 @@ namespace ProjectBuildCraft.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ArmorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ChargeTypeId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ClassId")
@@ -35,17 +70,10 @@ namespace ProjectBuildCraft.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PrimaryStatId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("SecondaryStatId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("SubclassId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Summary")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("WeaponId")
@@ -55,13 +83,11 @@ namespace ProjectBuildCraft.Migrations
 
                     b.HasIndex("ArmorId");
 
+                    b.HasIndex("ChargeTypeId");
+
                     b.HasIndex("ClassId");
 
                     b.HasIndex("FocusOptionId");
-
-                    b.HasIndex("PrimaryStatId");
-
-                    b.HasIndex("SecondaryStatId");
 
                     b.HasIndex("SubclassId");
 
@@ -74,14 +100,67 @@ namespace ProjectBuildCraft.Migrations
                         {
                             Id = 2,
                             ArmorId = 1,
+                            ChargeTypeId = 2,
                             ClassId = 1,
                             FocusOptionId = 3,
                             Mods = "Aspects: Touch of Flame; Fragments: Cure, Mercy, Flame, Searing; Helmet: Ashes to Assets ×2, Siphon Mod; Gloves: Firepower ×2, Momentum Transfer; Chest: Concussive Dampener, Emergency Reinforcement; Legs: Absolution, Restoration, Invigoration; Class Item: Powerful Attraction, Outreach, Distribution",
-                            PrimaryStatId = 3,
-                            SecondaryStatId = 6,
                             SubclassId = 1,
-                            Summary = "Dawnblade build centered on Ability Uptime with Touch of Flame + high-regen fragments and Dragon's Breath.",
+                            Summary = "Sunbracers Melee-focused Dawnblade build with high ability uptime.",
                             WeaponId = 1
+                        });
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ChargeModTemplate", b =>
+                {
+                    b.Property<int>("ChargeTypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Slot")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ChargeTypeId", "Slot");
+
+                    b.ToTable("ChargeModTemplates");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ChargeType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ChargeTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Grenade"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Melee"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Class Ability"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Super"
                         });
                 });
 
@@ -115,6 +194,39 @@ namespace ProjectBuildCraft.Migrations
                             Id = 3,
                             Name = "Titan"
                         });
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.EntityArchetype", b =>
+                {
+                    b.Property<string>("EntityType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("EntityId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ArchetypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("EntityType", "EntityId", "ArchetypeId");
+
+                    b.HasIndex("ArchetypeId");
+
+                    b.ToTable("EntityArchetypes");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.Exotic", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Exotics");
                 });
 
             modelBuilder.Entity("ProjectBuildCraft.Models.ExoticArmor", b =>
@@ -179,6 +291,9 @@ namespace ProjectBuildCraft.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ElementType")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -191,16 +306,19 @@ namespace ProjectBuildCraft.Migrations
                         new
                         {
                             Id = 1,
+                            ElementType = 0,
                             Name = "Dragon's Breath"
                         },
                         new
                         {
                             Id = 2,
+                            ElementType = 0,
                             Name = "Ace of Spades"
                         },
                         new
                         {
                             Id = 3,
+                            ElementType = 0,
                             Name = "Thorn"
                         });
                 });
@@ -235,6 +353,25 @@ namespace ProjectBuildCraft.Migrations
                             Id = 3,
                             Name = "Ability Uptime"
                         });
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.SandboxPerk", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SandboxPerks");
                 });
 
             modelBuilder.Entity("ProjectBuildCraft.Models.StatSelection", b =>
@@ -336,7 +473,7 @@ namespace ProjectBuildCraft.Migrations
                         {
                             Id = 6,
                             DestinyClassId = 1,
-                            Name = "Prismatic"
+                            Name = "Prismatic Warlock"
                         },
                         new
                         {
@@ -372,7 +509,7 @@ namespace ProjectBuildCraft.Migrations
                         {
                             Id = 12,
                             DestinyClassId = 2,
-                            Name = "Prismatic"
+                            Name = "Prismatic Hunter"
                         },
                         new
                         {
@@ -408,8 +545,19 @@ namespace ProjectBuildCraft.Migrations
                         {
                             Id = 18,
                             DestinyClassId = 3,
-                            Name = "Prismatic"
+                            Name = "Prismatic Titan"
                         });
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ArchetypeModTemplate", b =>
+                {
+                    b.HasOne("ProjectBuildCraft.Models.Archetype", "Archetype")
+                        .WithMany("ModTemplates")
+                        .HasForeignKey("ArchetypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Archetype");
                 });
 
             modelBuilder.Entity("ProjectBuildCraft.Models.BuildMapping", b =>
@@ -418,6 +566,12 @@ namespace ProjectBuildCraft.Migrations
                         .WithMany()
                         .HasForeignKey("ArmorId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjectBuildCraft.Models.ChargeType", "ChargeType")
+                        .WithMany()
+                        .HasForeignKey("ChargeTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProjectBuildCraft.Models.DestinyClass", "Class")
@@ -430,18 +584,6 @@ namespace ProjectBuildCraft.Migrations
                         .WithMany()
                         .HasForeignKey("FocusOptionId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProjectBuildCraft.Models.StatSelection", "PrimaryStat")
-                        .WithMany()
-                        .HasForeignKey("PrimaryStatId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("ProjectBuildCraft.Models.StatSelection", "SecondaryStat")
-                        .WithMany()
-                        .HasForeignKey("SecondaryStatId")
-                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ProjectBuildCraft.Models.Subclass", "Subclass")
@@ -458,17 +600,49 @@ namespace ProjectBuildCraft.Migrations
 
                     b.Navigation("Armor");
 
+                    b.Navigation("ChargeType");
+
                     b.Navigation("Class");
 
                     b.Navigation("FocusOption");
 
-                    b.Navigation("PrimaryStat");
-
-                    b.Navigation("SecondaryStat");
-
                     b.Navigation("Subclass");
 
                     b.Navigation("Weapon");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ChargeModTemplate", b =>
+                {
+                    b.HasOne("ProjectBuildCraft.Models.ChargeType", "ChargeType")
+                        .WithMany("ModTemplates")
+                        .HasForeignKey("ChargeTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChargeType");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.EntityArchetype", b =>
+                {
+                    b.HasOne("ProjectBuildCraft.Models.Archetype", "Archetype")
+                        .WithMany("EntityArchetypes")
+                        .HasForeignKey("ArchetypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Archetype");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.Archetype", b =>
+                {
+                    b.Navigation("EntityArchetypes");
+
+                    b.Navigation("ModTemplates");
+                });
+
+            modelBuilder.Entity("ProjectBuildCraft.Models.ChargeType", b =>
+                {
+                    b.Navigation("ModTemplates");
                 });
 #pragma warning restore 612, 618
         }

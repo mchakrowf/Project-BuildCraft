@@ -1,3 +1,4 @@
+// ViewModels/BuildViewModel.cs
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using ProjectBuildCraft.Models;
@@ -6,41 +7,35 @@ namespace ProjectBuildCraft.ViewModels
 {
     public class SelectItemWithImage
     {
-        public string Id       { get; set; } = null!;
-        public string Name     { get; set; } = null!;
-        public string ImageUrl { get; set; } = null!;
+        public string Id       { get; set; } = string.Empty;
+        public string Name     { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
     }
 
     public class BuildViewModel
     {
-        // user picks
-        public int? SelectedClassId    { get; set; }
-        public int? SelectedSubclassId { get; set; }
-        public int? SelectedArmorId    { get; set; }
-        public int? SelectedWeaponId   { get; set; }
-        public int? PrimaryStatId      { get; set; }
-        public int? SecondaryStatId    { get; set; }
-        public int? SelectedFocusId    { get; set; }
+        // Pick-lists for the form
+        public IEnumerable<SelectItemWithImage> Classes      { get; set; } = new List<SelectItemWithImage>();
+        public IEnumerable<SelectItemWithImage> Subclasses   { get; set; } = new List<SelectItemWithImage>();
+        public IEnumerable<SelectListItem>       Armors       { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem>       Weapons      { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem>       FocusOptions { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem>       ChargeTypes  { get; set; } = new List<SelectListItem>();
 
-        // image‐based pickers (only these two)
-        public IEnumerable<SelectItemWithImage> Classes    { get; set; } 
-            = new List<SelectItemWithImage>();
-        public IEnumerable<SelectItemWithImage> Subclasses { get; set; } 
-            = new List<SelectItemWithImage>();
+        // User’s selections
+        public int? SelectedClassId       { get; set; }
+        public int? SelectedSubclassId    { get; set; }
+        public int? SelectedArmorId       { get; set; }
+        public int? SelectedWeaponHash    { get; set; }
+        public int? SelectedFocusId       { get; set; }
+        public int? SelectedChargeTypeId  { get; set; }
 
-        // standard dropdowns
-        public IEnumerable<SelectListItem> Armors   { get; set; } 
-            = new List<SelectListItem>();
-        public IEnumerable<SelectListItem> Weapons  { get; set; } 
-            = new List<SelectListItem>();
+        // Generated loadouts
+        public Dictionary<string, List<ModDef>>     ModLoadout       { get; set; } = new Dictionary<string, List<ModDef>>();
+        public Dictionary<string, List<Aspect>>     AspectLoadout    { get; set; } = new Dictionary<string, List<Aspect>>();
+        public Dictionary<string, List<Fragment>>   FragmentLoadout  { get; set; } = new Dictionary<string, List<Fragment>>();
 
-        // still plain lists for stats & focus
-        public IEnumerable<SelectListItem> Stats        { get; set; } 
-            = new List<SelectListItem>();
-        public IEnumerable<SelectListItem> FocusOptions { get; set; } 
-            = new List<SelectListItem>();
-
-        // final recommendation
-        public BuildMapping? Recommendation { get; set; }
+        // The final build mapping & summary
+        public BuildMapping Recommendation { get; set; } = new BuildMapping();
     }
 }

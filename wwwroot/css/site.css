@@ -113,50 +113,76 @@ html.dark .navbar {
   background-color: var(--surface-dark) !important;
   border-bottom: 1px solid var(--border-dark);
 }
-
 html.dark .navbar-brand,
 html.dark .navbar .nav-link {
   color: var(--text-color-dark) !important;
 }
-
 html.dark .navbar .nav-link:hover {
   color: var(--text-color-light) !important;
 }
-
 html.dark .container {
   background-color: transparent;
 }
-
 html.dark .form-control,
 html.dark .form-select {
   background-color: var(--input-bg-dark) !important;
   color: var(--text-color-dark) !important;
   border: 1px solid var(--input-border) !important;
 }
-
 html.dark .form-select option {
   background-color: var(--input-bg-dark) !important;
   color: var(--text-color-dark) !important;
 }
-
 html.dark .btn-primary {
   background-color: var(--primary-dark) !important;
   border-color: #2ea043 !important;
 }
-
 html.dark .btn-primary:hover {
   background-color: #2ea043 !important;
 }
-
 html.dark .form-check-input {
   background-color: var(--surface-dark) !important;
   border-color: var(--border-dark) !important;
 }
 
-/* Invert class images in dark mode (excluding border) */
+/* Invert only the class icons (intentional) */
 html.dark .class-option img {
   filter: invert(1) brightness(1.2);
 }
+
+/* Invert only the mod‐loadout images in the Suggested Mod Loadout */
+html.dark .mod-loadout-section img {
+  filter: invert(1) hue-rotate(180deg) brightness(1.1);
+}
+
+html.dark .mod-loadout-section table {
+  background-color: var(--surface-dark);
+  color:            var(--text-color-dark);
+}
+
+html.dark .mod-loadout-section th,
+html.dark .mod-loadout-section td {
+  border-color: var(--border-dark);
+}
+
+/* target only your mod-loadout table in dark mode */
+html.dark .mod-loadout-section table {
+  background-color: var(--surface-dark);    /* dark panel background */
+  border-collapse: collapse;
+}
+
+html.dark .mod-loadout-section th,
+html.dark .mod-loadout-section td {
+  background-color: var(--surface-dark);    /* dark cells */
+  color:            var(--text-color-dark); /* light text */
+  border: 1px solid var(--border-dark);     /* subtle dark border */
+}
+
+/* shrink the white “gap” above/below the <hr> */
+html.dark hr {
+  border-color: var(--border-dark);
+}
+
 
 /* Style the selected class image with green border only */
 .class-option img {

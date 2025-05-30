@@ -187,4 +187,16 @@
 /Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/ProjectBuildCraft.csproj.AssemblyReference.cache
 /Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/ProjectB.666C1AFD.Up2Date
 /Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/5vlnjg3l2q-opqpjwygcy.gz
-/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz
+/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/ProjectBuildCraft.sourcelink.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/classes.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/exotics.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/plugs.json
+/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/SandboxPerkDefinition.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/DestinyInventoryItemDefinition.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/fragments-metadata.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/fragments-raw-metadata.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/aspects-raw-metadata.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/aspects-metadata.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/exotics-raw.json
+/Users/mohagany/ProjectBuildCraft/bin/Debug/net9.0/Data/exotics-metadata.json

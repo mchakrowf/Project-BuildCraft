@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3puCyt+iZhv7GDwu6OySeeAMNafGHbstvX9ICtjW6wU=",
+  "Hash": "zHWFuPwPLrvkQVmOxAEwza1go7soupp+487XMv0IV98=",
   "Source": "ProjectBuildCraft",
   "BasePath": "_content/ProjectBuildCraft",
   "Mode": "Default",
@@ -1046,12 +1046,12 @@
       "OriginalItemSpec": "/Users/mohagany/ProjectBuildCraft/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Identity": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz",
+      "Identity": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz",
       "SourceId": "ProjectBuildCraft",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/ProjectBuildCraft",
-      "RelativePath": "css/site#[.{fingerprint=3jxmh1qogx}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=33phrcffvr}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1060,8 +1060,8 @@
       "RelatedAsset": "/Users/mohagany/ProjectBuildCraft/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "10c3sm29uw",
-      "Integrity": "gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g=",
+      "Fingerprint": "tj3beq1u34",
+      "Integrity": "RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/mohagany/ProjectBuildCraft/wwwroot/css/site.css"
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "3jxmh1qogx",
-      "Integrity": "wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk=",
+      "Fingerprint": "33phrcffvr",
+      "Integrity": "P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -3127,13 +3127,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.3jxmh1qogx.css",
-      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz",
+      "Route": "css/site.33phrcffvr.css",
+      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000930232558"
+          "Quality": "0.000770416025"
         }
       ],
       "ResponseHeaders": [
@@ -3143,15 +3143,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1074"
+          "Value": "1297"
         },
         {
           "Name": "ETag",
-          "Value": "\"gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g=\""
+          "Value": "\"RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3171,13 +3171,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk=\""
+          "Value": "W/\"P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3jxmh1qogx"
+          "Value": "33phrcffvr"
         },
         {
           "Name": "label",
@@ -3185,12 +3185,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk="
+          "Value": "sha256-P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ="
         }
       ]
     },
     {
-      "Route": "css/site.3jxmh1qogx.css",
+      "Route": "css/site.33phrcffvr.css",
       "AssetFile": "/Users/mohagany/ProjectBuildCraft/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3200,7 +3200,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4443"
+          "Value": "5427"
         },
         {
           "Name": "Content-Type",
@@ -3208,11 +3208,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk=\""
+          "Value": "\"P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3222,7 +3222,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3jxmh1qogx"
+          "Value": "33phrcffvr"
         },
         {
           "Name": "label",
@@ -3230,13 +3230,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk="
+          "Value": "sha256-P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ="
         }
       ]
     },
     {
-      "Route": "css/site.3jxmh1qogx.css.gz",
-      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz",
+      "Route": "css/site.33phrcffvr.css.gz",
+      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3245,7 +3245,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1074"
+          "Value": "1297"
         },
         {
           "Name": "Content-Type",
@@ -3253,11 +3253,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g=\""
+          "Value": "\"RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3275,7 +3275,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3jxmh1qogx"
+          "Value": "33phrcffvr"
         },
         {
           "Name": "label",
@@ -3283,18 +3283,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g="
+          "Value": "sha256-RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz",
+      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000930232558"
+          "Quality": "0.000770416025"
         }
       ],
       "ResponseHeaders": [
@@ -3304,15 +3304,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1074"
+          "Value": "1297"
         },
         {
           "Name": "ETag",
-          "Value": "\"gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g=\""
+          "Value": "\"RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3332,13 +3332,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk=\""
+          "Value": "W/\"P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk="
+          "Value": "sha256-P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ="
         }
       ]
     },
@@ -3353,7 +3353,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4443"
+          "Value": "5427"
         },
         {
           "Name": "Content-Type",
@@ -3361,11 +3361,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk=\""
+          "Value": "\"P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3375,13 +3375,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wbcv703Q9nSrTQz8uCnW0sZYfiYGAcc347DjKTKh+Hk="
+          "Value": "sha256-P/TyUPsVuzMQOTmRogai6c7mMX9uquXLtIM/qpIGuaQ="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-3jxmh1qogx.gz",
+      "AssetFile": "/Users/mohagany/ProjectBuildCraft/obj/Debug/net9.0/compressed/s02n2dfja2-33phrcffvr.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3390,7 +3390,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1074"
+          "Value": "1297"
         },
         {
           "Name": "Content-Type",
@@ -3398,11 +3398,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g=\""
+          "Value": "\"RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 20:48:14 GMT"
+          "Value": "Tue, 13 May 2025 23:01:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3420,7 +3420,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-gXPGI7ljyTYswh6LLcwU2dOjafzwyQCVlhmAHHM/N+g="
+          "Value": "sha256-RxN/XXPyOorJAbVoBa89iZQgVHh1lbv1xeLNoD75NFU="
         }
       ]
     },
