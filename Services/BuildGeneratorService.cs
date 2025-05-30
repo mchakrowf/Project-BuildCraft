@@ -197,18 +197,21 @@ namespace ProjectBuildCraft.Services
                 "Shadebinder"      => "Stasis",
                 "Broodweaver"      => "Strand",
                 "Prismatic Warlock"=> exoticElement,
+
                 "Gunslinger"       => "Solar",
                 "Nightstalker"     => "Void",
                 "Arcstrider"       => "Arc",
                 "Revenant"         => "Stasis",
                 "Threadrunner"     => "Strand",
                 "Prismatic Hunter" => exoticElement,
+
                 "Sunbreaker"       => "Solar",
                 "Sentinel"         => "Void",
                 "Striker"          => "Arc",
                 "Behemoth"         => "Stasis",
                 "Berserker"        => "Strand",
                 "Prismatic Titan"  => exoticElement,
+
                 _                  => exoticElement
             };
 
@@ -269,16 +272,19 @@ namespace ProjectBuildCraft.Services
                 "Stormcaller" => "Arc",
                 "Shadebinder" => "Stasis",
                 "Broodweaver" => "Strand",
+
                 "Gunslinger"  => "Solar",
                 "Nightstalker"=> "Void",
                 "Arcstrider"  => "Arc",
                 "Revenant"    => "Stasis",
                 "Threadrunner"=> "Strand",
+
                 "Sunbreaker"  => "Solar",
                 "Sentinel"    => "Void",
                 "Striker"     => "Arc",
                 "Behemoth"    => "Stasis",
                 "Berserker"   => "Strand",
+
                 _             => throw new InvalidOperationException($"Unknown subclass {subclass.Name}")
             };
             Console.WriteLine($"[DEBUG] fragmentElement = \"{fragmentElement}\" (isPrismatic={isPrismatic})");
@@ -350,10 +356,6 @@ namespace ProjectBuildCraft.Services
             Console.WriteLine($"[DEBUG] Final fragments chosen ({result.Count}): {string.Join(", ", result.Select(f => f.Name))}");
             return result;
         }
-
-
-
-
 
         private List<Aspect> SelectAspects(
             GuardianClass guardianClass,
